@@ -6,4 +6,4 @@ open FsUnit
 
 [<Test>]
 let ``True Summ`` () =
-    FibonacciSum.FibSum.Counting |> should equal 1089154
+    FibonacciSum.FibSum.counting |> should equal 1089154
