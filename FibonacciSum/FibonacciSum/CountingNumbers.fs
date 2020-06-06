@@ -3,7 +3,7 @@
  
 module FibSum =
 
-    //Finds summ of even fibonaccies under 1000000
+    ///Finds summ of even fibonaccies under 1000000
     let counting =
         let rec fibonaccisumm previous current sum =
             if current < 1000000 && current % 2 = 0 then fibonaccisumm current (previous + current) (sum + current)
