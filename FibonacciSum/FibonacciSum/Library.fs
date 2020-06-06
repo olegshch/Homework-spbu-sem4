@@ -1,6 +1,8 @@
 ﻿namespace FibonacciSum
 
+ 
 module FibSum =
+    //Finds summ of even fibonaccies under 1000000
     let Counting =
         let rec Summ i s =
             let Fibonacci n =
