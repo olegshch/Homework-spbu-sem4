@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "MyQueue", "MyQueue\MyQueue.fsproj", "{1712280E-AD70-487C-85E9-C598D55894CB}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "TestingMyQueue", "TestingMyQueue\TestingMyQueue.fsproj", "{7FE4D4C9-C427-454E-9A2F-9D00C6B05639}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1712280E-AD70-487C-85E9-C598D55894CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1712280E-AD70-487C-85E9-C598D55894CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1712280E-AD70-487C-85E9-C598D55894CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1712280E-AD70-487C-85E9-C598D55894CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FE4D4C9-C427-454E-9A2F-9D00C6B05639}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FE4D4C9-C427-454E-9A2F-9D00C6B05639}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FE4D4C9-C427-454E-9A2F-9D00C6B05639}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FE4D4C9-C427-454E-9A2F-9D00C6B05639}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {111E6A55-DEDF-48E4-A1A4-2D84E755AFA7}
+	EndGlobalSection
+EndGlobal
