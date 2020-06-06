@@ -1,7 +1,9 @@
 image: Visual Studio 2017
 
 environment:
- 
+ matrix:
+
+  - solution_path: FibonacciSum\FibonacciSum.sln
    
 before_build:
   - nuget restore %solution_path%
