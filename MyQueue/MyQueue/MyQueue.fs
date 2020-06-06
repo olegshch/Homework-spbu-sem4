@@ -2,15 +2,16 @@
 
 open System
 
+    ///my classic queue
     type 'a MyQueue()=
         let mutable elements = []
 
-        //Add element 
+        ///Add element 
         member this.Enqueue value =
             let list = [value]
             elements <-  elements @ list
 
-        //Get head
+        ///Get head
         member this.Dequeue =
             match elements with
             | [] -> raise (InvalidOperationException())
