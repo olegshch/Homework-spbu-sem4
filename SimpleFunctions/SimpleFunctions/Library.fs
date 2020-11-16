@@ -1,24 +1,24 @@
 ﻿namespace SimpleFunctions
 
 module Functions =
-    let factorial n =
-        let rec fact s a b =
-            if a = b then s 
-            else fact (s * (a + 1)) (a + 1) b
-        fact 1 1 n 
+    let factorial number =
+        let rec fact acc current limit =
+            if current = limit then acc 
+            else fact (acc * (current + 1)) (current + 1) limit
+        fact 1 1 number 
     
-    let fibonacci n =
-        let rec fib a b i n =
-            if i = n then a
-            else fib b (a + b) (i + 1) n
-        fib 1 1 1 n
+    let fibonacci number =
+        let rec fib prev cur i limit =
+            if i = limit then prev
+            else fib cur (prev + cur) (i + 1) limit
+        fib 1 1 1 number
 
-    let reverseList llist =
+    let reverseList curlist =
         let rec rev oldlist newlist = 
             match oldlist with
             | [] -> newlist
             | head::tail -> rev tail (head::newlist)
-        rev llist []
+        rev curlist []
 
     let powerTwo n m =
         let rec power n m list = 
