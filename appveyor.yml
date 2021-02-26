@@ -3,7 +3,7 @@ image: Visual Studio 2017
 environment:
  matrix:
 
-  - solution_path: SimpleFunctions\SimpleFunctions.sln
+  - solution_path: SecondFunctions\SecondFunctions.sln
    
 before_build:
   - nuget restore %solution_path%
