@@ -20,21 +20,21 @@ module Functions =
             | head::tail -> rev tail (head::newlist)
         rev curlist []
 
-    let powerTwo n m =
+    let powerTwoList n m =
         let rec power n m list = 
-            let makingPower n =
-                let rec pow a b = 
-                    if b = 0 then a
-                    else pow (a * 2) (b - 1)
-                pow 1 n
+            let makingPower power =
+                let rec pow res powerTwo = 
+                    if powerTwo = 0 then res
+                    else pow (res * 2) (powerTwo - 1)
+                pow 1 power
             if n = m then list
             else power (n + 1) m (list @ [makingPower n])
         power n (n + m + 1) []
 
-    let find list n =
-        let rec findd list i =
+    let find list number =
+        let rec findLocal list position =
             match list with
             | [] -> -1
-            | head::tail when head = n -> i
-            | _ -> findd list.Tail (i + 1)
-        findd list 0
+            | head::tail when head = number -> position
+            | _ -> findLocal list.Tail (position + 1)
+        findLocal list 0
