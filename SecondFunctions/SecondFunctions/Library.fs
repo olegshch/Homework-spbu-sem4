@@ -29,6 +29,7 @@ module MapTree =
         | Node(h, l, r) -> Node(func h, mapTree func l, mapTree func r)
         | Empty -> Empty
 
+/// Подсчет значения дерева разбора
 module ExpressionEvaluation =
 
     /// Arithmetical expression tree representation with discriminated union.
@@ -46,3 +47,14 @@ module ExpressionEvaluation =
         | Diff(a, b) -> eval a - eval b
         | Div(a, b) -> eval a / eval b
         | Operand(x) -> x
+
+module PrimeGeneration = 
+    
+    let isPrime num =
+        if num < 2 then false
+        else
+            let root = (double >> sqrt >> int) num
+            [2 .. root] |> List.forall (fun x -> num % x <> 0)
+
+    let primeSequence () = 
+        Seq.initInfinite id |> Seq.filter isPrime
