@@ -21,14 +21,14 @@ module Functions =
         rev curlist []
 
     let powerTwoList n m =
-        let rec power n m list = 
+        let rec power n limit list = 
             let makingPower power =
                 let rec pow res powerTwo = 
                     if powerTwo = 0 then res
                     else pow (res * 2) (powerTwo - 1)
                 pow 1 power
-            if n = m then list
-            else power (n + 1) m (list @ [makingPower n])
+            if n = limit then list
+            else power (n + 1) limit (list @ [makingPower n])
         power n (n + m + 1) []
 
     let find list number =

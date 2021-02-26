@@ -22,3 +22,7 @@ let ``Power test`` () =
 [<Test>]
 let ``Find test`` () =
     find [3; 4; 5] 4 |> should equal 1
+
+[<Test>]
+let ``Find unexisting test`` () =
+    find [3; 4; 5] 0 |> should equal -1
