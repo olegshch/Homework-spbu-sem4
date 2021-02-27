@@ -3,7 +3,9 @@
 module Functions =
     let factorial number =
         let rec fact acc current limit =
-            if current = limit then acc 
+            if limit < 0 then -1
+            elif limit = 0 then 1
+            elif current = limit then acc 
             else fact (acc * (current + 1)) (current + 1) limit
 
         fact 1 1 number 
@@ -24,18 +26,18 @@ module Functions =
         rev curlist []
 
     let powerTwoList n m =
-        let makingPower power =
-            let rec pow res powerTwo = 
-                if powerTwo = 0 then res
-                else pow (res * 2) (powerTwo - 1)
+        let rec makingPower x n acc =
+            match n with
+            | 0 -> 1
+            | 1 -> x * acc
+            | _ when n % 2 = 0 -> makingPower (x * x) (n / 2) acc
+            | _ -> makingPower (x * x) (n / 2) (acc * x)
 
-            pow 1 power
+        let rec power n limit acc =            
+            if n = limit then acc
+            else power (n + 1) limit ((acc.Head / 2)::acc)
 
-        let rec power n limit list acc =            
-            if n = limit then list
-            else power (n + 1) limit (list @ [acc]) (acc * 2)
-
-        power n (n + m + 1) [] (makingPower n)
+        power 0 m [makingPower 2 (n + m) 1]
 
     let find list number =
         let rec findLocal list position =

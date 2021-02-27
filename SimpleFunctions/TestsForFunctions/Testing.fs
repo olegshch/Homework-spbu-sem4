@@ -8,6 +8,14 @@ let ``Factorial test`` () =
     factorial 5 |> should equal 120
 
 [<Test>]
+let ``Factorial zero test`` () =
+    factorial 0 |> should equal 1
+
+[<Test>]
+let ``Factorial negative test`` () =
+    factorial -2 |> should equal -1
+
+[<Test>]
 let ``Fibonacci test`` () =
     fibonacci 10 |> should equal 55
 
