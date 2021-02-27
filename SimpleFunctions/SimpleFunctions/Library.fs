@@ -42,8 +42,8 @@ module Functions =
     let find list number =
         let rec findLocal list position =
             match list with
-            | [] -> -1
-            | head::tail when head = number -> position
+            | [] -> None
+            | head::tail when head = number -> Some(position)
             | _ -> findLocal list.Tail (position + 1)
 
         findLocal list 0
