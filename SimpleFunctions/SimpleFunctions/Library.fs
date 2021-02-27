@@ -3,9 +3,9 @@
 module Functions =
     let factorial number =
         let rec fact acc current limit =
-            if limit < 0 then -1
-            elif limit = 0 then 1
-            elif current = limit then acc 
+            if limit < 0 then None
+            elif limit = 0 then Some(1)
+            elif current = limit then Some(acc) 
             else fact (acc * (current + 1)) (current + 1) limit
 
         fact 1 1 number 

@@ -5,15 +5,15 @@ open FsUnit
 open SimpleFunctions.Functions
 [<Test>]
 let ``Factorial test`` () =
-    factorial 5 |> should equal 120
+    factorial 5 |> should equal (Some(120))
 
 [<Test>]
 let ``Factorial zero test`` () =
-    factorial 0 |> should equal 1
+    factorial 0 |> should equal (Some(1))
 
 [<Test>]
 let ``Factorial negative test`` () =
-    factorial -2 |> should equal -1
+    factorial -2 |> should equal None
 
 [<Test>]
 let ``Fibonacci test`` () =
