@@ -1,10 +1,12 @@
 module SecondFunctionsTests
 
+open FsCheck
 open NUnit.Framework
 open SecondFunctions
 open FsUnit
 open ExpressionEvaluation
 open MapTree
+open EvenCount
 
 let testCasesSequenceOfPrimeNumbers =
     [
@@ -67,3 +69,32 @@ let ``MapTree test`` () =
 [<Test>]
 let ``BiggerMapTree test`` () =
     mapTree (fun x -> x * -x) (Node(2, Node(5, Empty, Empty), Node(3, Empty, Node(0, Empty, Empty)))) |> should equal (Node(-4, Node(-25, Empty, Empty), Node(-9, Empty, Node(0, Empty, Empty))))
+
+let testCases =
+    [
+        [], 0
+        [2], 1
+        [1], 0
+        [1; 2; 3; 4; 5], 2
+        [0; 2; 4; 8; 16; 32; 64], 7
+        [-1; -2; -3; -4; -5], 2
+        [-2; 2; -4; 4; -8; 8], 6
+        [for x in 1..100000 -> 2], 100000
+        [for x in 1..100000 -> x % 2], 50000
+    ] |> List.map (fun (l, e) -> TestCaseData(l, e))
+
+[<TestCaseSource("testCases")>]
+let ``Count even elements of list with evenCountFilter`` list expected =
+    evenFilter list |> should equal expected
+
+[<TestCaseSource("testCases")>]
+let ``Count even elements of list with evenCountFold`` list expected =
+    evenFold list |> should equal expected
+
+[<TestCaseSource("testCases")>]
+let ``Count even elements of list with evenCountMap`` list expected =
+    evenMap list |> should equal expected
+
+[<Test>]
+let ``Functions return equal results`` () = 
+    Check.QuickThrowOnFailure (fun x -> evenFold x = evenFilter x && evenFold x = evenMap x)
