@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "BracketsCheck", "BracketsCheck\BracketsCheck.fsproj", "{6393A842-633E-4503-AC3E-316E45ACDCDD}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "4_1taskTesting", "4_1taskTesting\4_1taskTesting.fsproj", "{0AA396FC-FD09-4C85-8EB8-292C2DBE736B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6393A842-633E-4503-AC3E-316E45ACDCDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6393A842-633E-4503-AC3E-316E45ACDCDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6393A842-633E-4503-AC3E-316E45ACDCDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6393A842-633E-4503-AC3E-316E45ACDCDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0AA396FC-FD09-4C85-8EB8-292C2DBE736B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0AA396FC-FD09-4C85-8EB8-292C2DBE736B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0AA396FC-FD09-4C85-8EB8-292C2DBE736B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0AA396FC-FD09-4C85-8EB8-292C2DBE736B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DB18ED42-9790-4D1B-9C9E-4456B515FBAA}
+	EndGlobalSection
+EndGlobal
