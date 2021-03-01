@@ -57,7 +57,7 @@ let ``Try to add name which already exists`` () =
 
 [<Test>]
 let ``Read file`` () =
-    let book = Phonebook () |> Phonebook.Add "kek" "1" |> Phonebook.FromFile "Test1.txt"
+    let book = Phonebook () |> Phonebook.Add "kek" "1" |> Phonebook.FromFile "..\..\..\Test1.txt"
 
     Phonebook.FindNumber "cheburek" book |> should equal (Some("2"))
     Phonebook.FindNumber "kek" book |> should equal (Some("1"))
