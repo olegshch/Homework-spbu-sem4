@@ -18,6 +18,15 @@ let ``SimpleRounderTest`` () =
 
 [<Test>]
 let ``SecondSimpleRounderTest`` () =
+    let rounder = new Rounder(3)
+    rounder {
+        let! a = 2.0 
+        let! b = 1.0
+        return a / b
+    } |> should (equalWithin 1) 2.0
+
+[<Test>]
+let ``ThirdSimpleRounderTest`` () =
     let rounder = new Rounder(2)
     rounder {
         let! a = 3.0 / 11.0
