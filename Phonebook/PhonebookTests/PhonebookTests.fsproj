@@ -15,8 +15,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Test1.txt" />
     <Compile Include="PhonebookTests.fs" />
   </ItemGroup>
+
+  <ItemGroup />
 
   <ItemGroup>
     <ProjectReference Include="..\PhonebookLogic\PhonebookLogic.fsproj" />
