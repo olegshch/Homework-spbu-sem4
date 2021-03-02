@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "WebSurf", "WebSurf\WebSurf.fsproj", "{C8EFFFC6-9291-4D5F-8CB2-16212529952C}"
+EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "WebSurfTests", "WebSurfTests\WebSurfTests.fsproj", "{53385F7C-8EC8-4F7E-A316-FE93D0505FAA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C8EFFFC6-9291-4D5F-8CB2-16212529952C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8EFFFC6-9291-4D5F-8CB2-16212529952C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8EFFFC6-9291-4D5F-8CB2-16212529952C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8EFFFC6-9291-4D5F-8CB2-16212529952C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53385F7C-8EC8-4F7E-A316-FE93D0505FAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53385F7C-8EC8-4F7E-A316-FE93D0505FAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53385F7C-8EC8-4F7E-A316-FE93D0505FAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53385F7C-8EC8-4F7E-A316-FE93D0505FAA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {39CEF1F4-BD55-4B5D-AE69-85D57E8EC355}
+	EndGlobalSection
+EndGlobal
