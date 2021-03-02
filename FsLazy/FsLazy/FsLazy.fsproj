@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="ILazy.fs" />
+    <Compile Include="Lazy.fs" />
   </ItemGroup>
 
 </Project>
