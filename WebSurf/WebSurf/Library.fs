@@ -8,7 +8,7 @@ module WebSurf =
 
     let regex = new Regex("<a href\s*=\s*\"?(https?://[^\"]+)\"?\s*>")
     
-    /// Function that downloads url, prints count of symbols on page and returns it.
+    /// Получение и вывод информации
     let fetchAsync (url: string) =
        async {
          try
@@ -17,14 +17,14 @@ module WebSurf =
            let stream = response.GetResponseStream()
            let reader = new StreamReader(stream)
            let html = reader.ReadToEnd()
-           do printfn "Read %d characters for %s..." html.Length url
+           do printfn "%d characters for %s..." html.Length url
            return Some html
          with
          | _ -> do printfn "error"
                 return None
       }
     
-    /// Function to get information about all links from start link.
+    /// Обработка всех ссылок на странице
     let getAllLinks url =
         match (url |> fetchAsync |> Async.RunSynchronously) with
         | None -> []
