@@ -1,4 +1,4 @@
-module _3taskTesting
+module LambdaInterpretatorTesting
 
 open NUnit.Framework
 open FsUnit

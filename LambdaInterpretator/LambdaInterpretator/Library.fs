@@ -8,10 +8,10 @@ module LambdaInterpretator =
         | Abs of char * Term
         | App of Term * Term
 
-    ///Бета-редукция
+    /// Бета-редукция
     let rec reduction expr =
         
-        ///Проверка на свободную переменную
+        /// Проверка на свободную переменную
         let rec isFreeVar expr var = 
             match expr with 
             | Var x -> x = var
@@ -22,7 +22,7 @@ module LambdaInterpretator =
         let findToConverse expr =
             List.find (fun x -> not (isFreeVar expr x)) ['a'..'z']
 
-        ///Подстановка
+        /// Подстановка
         let rec substitute expr insteadOf value =
             match expr with
             | Var x when x = insteadOf -> value
@@ -35,7 +35,7 @@ module LambdaInterpretator =
             | App(l, r) -> App(substitute l insteadOf value, substitute r insteadOf value)
             | _ -> expr
 
-        ///Удаление левого терма
+        /// Удаление левого терма
         let rec reduceLeft expr =
             match expr with
             | App(l, r) -> match reduceLeft l with 

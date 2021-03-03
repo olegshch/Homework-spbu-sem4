@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Include="3taskTests.fs" />
+    <Compile Include="LambdaInterpretatorTesting.fs" />
   </ItemGroup>
 
   <ItemGroup>
