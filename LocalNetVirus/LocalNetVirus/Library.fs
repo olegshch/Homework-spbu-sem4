@@ -5,9 +5,9 @@ open System
 module Models =
 
     /// Описание ОС с вероятностью заражения
-    type OS (infectProb : float) =
+    type OS (infectProbability : float) =
        
-        member this.InfectProb = infectProb
+        member this.InfectProbability = infectProbability
 
     /// Описание компьютера
     type Computer (id, os : OS, isInfected : bool) =
@@ -19,9 +19,17 @@ module Models =
             with get () = isInfected
             and set (value) = isInfected <- value
 
+        member this.Attempt (randomGen : System.Random) =
+
+            /// Заражение
+            if (not isInfected && this.OS.InfectProbability > randomGen.NextDouble()) then
+                isInfected <- true
+
     /// Описание сети
     type Network (computers: list<Computer>, matrix: list<list<bool>>) =
         
+        let randomGen = Random()
+
         let mutable computers = computers
     
         member this.Computers = computers
@@ -39,12 +47,10 @@ module Models =
                         if matrix.[index].[i] then
                             neighboursToInfect <- neighboursToInfect + 1
     
-                            if (computers.[i].OS.InfectProb <> 1.0) then
-                                allAreInvurnelable <- false
-    
-                            /// Заражение
-                            if (not computers.[i].IsInfected && computers.[i].OS.InfectProb > Random().NextDouble()) then
-                                computers.[i].IsInfected <- true
+                            if (computers.[i].OS.InfectProbability <> 1.0) then
+                                allAreInvurnelable <- false    
+
+                            computers.[i].Attempt(randomGen)
     
                 let infected = computers |> List.filter (fun x -> x.IsInfected)
     
@@ -58,4 +64,4 @@ module Models =
         /// Вывод состояния
         member this.PrintReport () =
             computers |>
-            List.iter (fun item -> printfn "id: %A\nInfection probability: %A\nIs infected: %A\n" item.Id item.OS.InfectProb item.IsInfected)
+            List.iter (fun item -> printfn "id: %A\nInfection probability: %A\nIs infected: %A\n" item.Id item.OS.InfectProbability item.IsInfected)
