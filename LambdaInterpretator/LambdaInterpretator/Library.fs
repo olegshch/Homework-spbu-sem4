@@ -30,8 +30,10 @@ module LambdaInterpretator =
             | Abs(var, lmd) when var = insteadOf -> expr
             | Abs(var, lmd) when not (isFreeVar value var) -> Abs(var, substitute lmd insteadOf value)
             | Abs(var, lmd) -> 
-                let right = substitute (substitute lmd var (Var (findToConverse expr))) insteadOf value
-                Abs(findToConverse(value), right)
+                let newSym = ['a'..'z'] |> List.filter (not << isFreeVar value) |> List.head
+                Abs(newSym, substitute value insteadOf <| substitute lmd var (Var newSym))
+                //let right = substitute (substitute lmd var (Var (findToConverse expr))) insteadOf value
+                //Abs(findToConverse(value), right)
             | App(l, r) -> App(substitute l insteadOf value, substitute r insteadOf value)
             | _ -> expr
 
