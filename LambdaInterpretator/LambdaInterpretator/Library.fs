@@ -18,10 +18,6 @@ module LambdaInterpretator =
             | Abs(vr, term) -> vr <> var && (isFreeVar term var) 
             | App(l, r) -> isFreeVar l var || isFreeVar r var
 
-
-        let findToConverse expr =
-            List.find (fun x -> not (isFreeVar expr x)) ['a'..'z']
-
         /// Подстановка
         let rec substitute expr insteadOf value =
             match expr with
@@ -32,8 +28,6 @@ module LambdaInterpretator =
             | Abs(var, lmd) -> 
                 let newSym = ['a'..'z'] |> List.filter (not << isFreeVar value) |> List.head
                 Abs(newSym, substitute value insteadOf <| substitute lmd var (Var newSym))
-                //let right = substitute (substitute lmd var (Var (findToConverse expr))) insteadOf value
-                //Abs(findToConverse(value), right)
             | App(l, r) -> App(substitute l insteadOf value, substitute r insteadOf value)
             | _ -> expr
 
