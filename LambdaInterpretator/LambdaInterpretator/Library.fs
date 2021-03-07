@@ -26,7 +26,7 @@ module LambdaInterpretator =
             | Abs(var, lmd) when var = insteadOf -> expr
             | Abs(var, lmd) when not (isFreeVar value var) -> Abs(var, substitute lmd insteadOf value)
             | Abs(var, lmd) -> 
-                let newSym = ['a'..'z'] |> List.filter (not << isFreeVar value) |> List.head
+                let newSym = ['a'..'z'] |> List.filter (not << isFreeVar value) |> List.filter (not << isFreeVar lmd) |> List.head
                 Abs(newSym, substitute value insteadOf <| substitute lmd var (Var newSym))
             | App(l, r) -> App(substitute l insteadOf value, substitute r insteadOf value)
             | _ -> expr
